@@ -197,7 +197,7 @@ export default function AllRecipes() {
 
   return (
     <div className="recipes-container">
-      <h1>Recipes</h1>
+      <h1>Pick your favourite meal and add to planner!!!</h1>
       <div className="wrap">
       <div className="search">
         <input
@@ -246,15 +246,16 @@ export default function AllRecipes() {
               Add to planner
             </button>
 
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-              <h2>Choose a day to save the meal</h2>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="modal-content">
+              <h2>Choose a day to save the meal</h2><br/>
 
               <Calendar
+              className="react-calendar"
                 onChange={setSelectedDate}
                 value={selectedDate.setHours(0, 0, 0, 0)}
-              />
-              <p>Selected Date: {selectedDate.toDateString()}</p>
-              <h3>Selected recipe: {currentRecipe?.recipe.label}</h3>
+              /><br/>
+              <p>Selected Date: {selectedDate.toDateString()}</p><br/>
+              <h3>Selected recipe: {currentRecipe?.recipe.label}</h3><br/>
 
               <Select
                 defaultValue={selectedOption}
@@ -262,11 +263,11 @@ export default function AllRecipes() {
                 options={options}
               />
 
-              <button onClick={handleAddToPlanner}>
+              <button onClick={handleAddToPlanner}  className="btn-add-planner">
                 Add to weekly planner
-              </button>
+              </button>&nbsp;&nbsp;
 
-              <button onClick={closeModal}>Close</button>
+              <button onClick={closeModal}  className="btn-close">Close</button>
             </Modal>
           </div>
         ))}

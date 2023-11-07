@@ -24,7 +24,7 @@ function SearchPage() {
             value={query}
             className="searchTerm"
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="What are you looking for?"
+            placeholder="Search and add to favourites!!"
           />
           <button className="searchButton" onClick={handleSearch}>
             <i

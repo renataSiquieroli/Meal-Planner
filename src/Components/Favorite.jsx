@@ -16,7 +16,8 @@ const Favorite = () => {
     }
   }, []);
 
-  return (
+  return (<>
+
     <div className="recipes-container">
       <h3>Your Favorite Recipes</h3>
       <div className="recipes-wrapper">
@@ -43,6 +44,7 @@ const Favorite = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
