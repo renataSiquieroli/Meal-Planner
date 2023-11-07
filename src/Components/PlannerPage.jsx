@@ -1,14 +1,14 @@
 import "../Styles/PlannerPage.css";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/authContext";
-import { Link } from "react-router-dom";
 
 export default function PlannerPage() {
   const [plans, setPlans] = useState([]);
   const { token } = useContext(AuthContext);
 
   //const localAPI = "http://localhost:8080/meal-planner/getall-meal-planners";
-   const deployAPI = "https://meal-planner-backend-57g4.onrender.com/meal-planner/getall-meal-planners";
+  const deployAPI =
+    "https://meal-planner-backend-57g4.onrender.com/meal-planner/getall-meal-planners";
 
   // Fectch Data
   useEffect(() => {
