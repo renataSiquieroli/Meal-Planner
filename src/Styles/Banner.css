@@ -1,0 +1,21 @@
+.banner-demo {
+  height: 100vh;
+}
+
+.banner-demo h1 {
+  text-align: center;
+  padding: 5%;
+}
+.banner-demo img {
+  margin-left: 25%;
+  width: 60%;
+}
+
+.banner-text {
+  margin-left: 25%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1.2em;
+}
