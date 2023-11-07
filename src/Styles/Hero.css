@@ -1,46 +1,31 @@
-/* Container holding the image and the text */
-.container {
-  position: relative;
+:root {
+  --primary: #f19a33;
+  --secondary: #8bab6a;
+  --orange: #fad68a;
+  --light-orange: #f4ebce;
+  --light: #eee;
+  --light-grey: #dde2e6;
+  --grey: #888;
+  --dark: #313154;
+  --danger: #ff5b57;
+}
+
+.hero-cover {
+  min-width: 100%;
+  height: 600px;
+  background: url(https://images.squarespace-cdn.com/content/v1/5c952d4de5f7d123accad683/1647580798881-1VQIBII5OC4WKP5NTOYI/meal_plans_banner.jpg?format=2500w)
+    no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-cover h1 {
+  width: 80%;
+  /* border: 2px solid red; */
   text-align: center;
-
-  /* background-image: url('https://noahhelps.org/wp-content/uploads/2021/03/March_Meal-Prep-1030x515.jpeg'); */
-}
-
-/* Bottom left text */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-
-/* Top left text */
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
-/* Top right text */
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 25px;
-  color: black;
-  font-weight: bolder;
+  font-size: 5em;
+  color: var(--light);
+  text-shadow: 0 2px 3px var(--secondary);
 }
