@@ -1,3 +1,17 @@
+/* --a custom property */
+:root {
+  --primary: #f19a33;
+  --secondary: #8BAB6A;
+  --orange: #FAD68A;
+  --light-orange:#f4ebce;
+  --light: #eee;
+  --light-grey:#dde2e6;
+  --grey: #888;
+  --dark: #313154;
+  --danger: #ff5b57;
+
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 .recipes-wrapper {
   margin-top: 15%;
   display: grid;
@@ -21,7 +35,8 @@
   color: black;
   text-shadow: 0.5px 0.5px #f19a33;
   margin-top: 5%;
-  font-size: 4em;
+  font-size: 2em;
+  font-family: "Barlow", sans-serif;
 }
 
 .recipe-card {
@@ -77,4 +92,62 @@
   display:flex;
   align-items: center;
   column-gap: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:  var(--light-grey);
+  z-index: 1;
+}
+
+/* Style the modal content */
+.modal-content {
+  background-color: var(--light-grey);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-content h2 {
+ 
+  margin-left: 50px;
+}
+.modal-content p {
+ 
+  margin-left: 50px;
+}
+.modal-content h3 {
+ 
+  margin-left: 50px;
+}
+.react-calendar {
+  /* Your custom styles here */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin:auto
+}
+.btn-close {
+  background-color: var(--primary);
+  margin-top: 3%;
+  border: 0;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  transition: 0, 3s;
+  background-color:var(--secondary);
 }
