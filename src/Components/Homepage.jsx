@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Hero from "./Hero";
-import SearchRecipe from "./SearchRecipe";
 import Spinner from "./Spinner";
 import BannerImg from "./BannerImg";
 import SearchPage from "./SearchPage";
@@ -11,7 +10,7 @@ function Homepage() {
   useEffect(() => {
     if (isloading) {
       setTimeout(() => {
-        setLoading(false);
+        setIsLoading(false);
       }, 2000);
     }
   }, []);
@@ -25,10 +24,8 @@ function Homepage() {
       ) : (
         <div>
           <Hero />
-          {/* <SearchRecipe /> */}
-          <SearchPage/>
           <BannerImg />
-       
+          {/* <SearchPage /> */}
         </div>
       )}
     </>
