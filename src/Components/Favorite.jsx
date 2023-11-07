@@ -1,7 +1,7 @@
 import { Card } from 'antd';
 import React, { useEffect, useState } from 'react';
 import "../Styles/AllRecipes.css";
-
+import SearchPage from "./SearchPage";
 
 const { Meta } = Card
 
@@ -17,7 +17,7 @@ const Favorite = () => {
   }, []);
 
   return (<>
-
+<SearchPage/>
     <div className="recipes-container">
       <h3>Your Favorite Recipes</h3>
       <div className="recipes-wrapper">
