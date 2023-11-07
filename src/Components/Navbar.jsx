@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
@@ -19,18 +19,21 @@ function Navbar() {
     <div className="nav">
       <div className="nav-header">
         <div className="nav-title">
-          <Link to="/">MealPlanner</Link>
+          <Link to="/">
+            {" "}
+            <img src="/white-logo.png" alt="logo" />
+          </Link>
         </div>
       </div>
 
       <nav className="nav-links">
         <Link to="/all-recipes">Recipe</Link>
         <Link to="/meal-planner">Meal-Planner</Link>
-        <Link to="/favorite">Favourite</Link>
+        <Link to="/favorite">Favorite</Link>
 
         {token !== null && (
           <>
-            <span style={{ padding: "10px" }}>Hello, {decodedToken?.name}</span>
+            <span>Hello, {decodedToken?.name}</span>
             <button className="log-out-btn" onClick={handleClick}>
               Log out
             </button>

@@ -33,6 +33,7 @@ export default function BannerImg() {
       </div>
       <div className="bottom-banner">
         <h1>Healthy, hearty meals await.</h1>
+        <img src="" alt="" />
       </div>
     </>
   );

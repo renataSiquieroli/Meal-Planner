@@ -6,13 +6,12 @@ import "react-calendar/dist/Calendar.css";
 import { Card } from "antd";
 const { Meta } = Card;
 import "../Styles/AllRecipes.css";
-import SearchRecipe from "./SearchRecipe";
+
 Modal.setAppElement("#root"); // Set the root element for accessibility
 import { AuthContext } from "../context/authContext";
 import Select from "react-select";
 import Swal from "sweetalert2";
-//import 'sweetalert2/src/sweetalert2.scss'; // Import the styles if you're not using CSS modules
-import GroceryList from "./GroceryList"; 
+
 import { useIngredientsContext } from "../context/ingredientsContext";
 import "../Styles/SearchRecipe.css";
 
@@ -28,7 +27,7 @@ export default function AllRecipes() {
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [showDefaultRecipes, setShowDefaultRecipes] = useState(true); // Flag to show default recipes
   const [showGroceryList, setShowGroceryList] = useState(false); // State for showing/hiding GroceryList
-  const { ingredientsList, setIngredientsList } = useIngredientsContext();// Ingredients list
+  const { ingredientsList, setIngredientsList } = useIngredientsContext(); // Ingredients list
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIngredientsModal, setShowIngredientsModal] = useState(false); // New state to manage ingredient visibility
 
@@ -83,8 +82,8 @@ export default function AllRecipes() {
   };
   useEffect(() => {
     fetchRecipes();
-    setIngredientsList([]); 
-  }, [currentPage,searchQuery]);
+    setIngredientsList([]);
+  }, [currentPage, searchQuery]);
 
   const mealPlannerData = {
     user: Id,
@@ -138,27 +137,27 @@ export default function AllRecipes() {
 
       console.log("MEAL TO SAVE: ", updatedData);
       // You can now send `updatedData` to your backend.
-      
-       // Extract and collect the ingredients from the current recipe
-       const recipeIngredients = currentRecipe.recipe.ingredientLines;
 
-       // Combine the new ingredients with the existing ingredients list
-       const updatedIngredientsList = [...ingredientsList, ...recipeIngredients];
- 
-       // Update the ingredients list state
-       setIngredientsList(updatedIngredientsList);
- 
-       // Continue with the rest of your meal planner logic
-       console.log("Ingredients List:", updatedIngredientsList);
-     
+      // Extract and collect the ingredients from the current recipe
+      const recipeIngredients = currentRecipe.recipe.ingredientLines;
+
+      // Combine the new ingredients with the existing ingredients list
+      const updatedIngredientsList = [...ingredientsList, ...recipeIngredients];
+
+      // Update the ingredients list state
+      setIngredientsList(updatedIngredientsList);
+
+      // Continue with the rest of your meal planner logic
+      console.log("Ingredients List:", updatedIngredientsList);
+
       // You can now send `updatedData` to your backend.
 
       console.log("ABOUT TO ENTER FETCH");
 
-     // const localAPI =
-        "http://localhost:8080/meal-planner/create-meal-planners";
-       const deployAPI =
-         "https://meal-planner-backend-57g4.onrender.com/meal-planner/create-meal-planners";
+      // const localAPI =
+      ("http://localhost:8080/meal-planner/create-meal-planners");
+      const deployAPI =
+        "https://meal-planner-backend-57g4.onrender.com/meal-planner/create-meal-planners";
 
       try {
         const res = await fetch(deployAPI, {
@@ -197,24 +196,23 @@ export default function AllRecipes() {
 
   return (
     <div className="recipes-container">
-      <h1>Pick your favourite meal and add to planner!!!</h1>
+      <h1>Pick your favorite meal and add it to planner!</h1>
       <div className="wrap">
-      <div className="search">
-        <input
-          type="text"
-          className="searchTerm"
-          placeholder="Search for recipes"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-          <button className="searchButton" >
+        <div className="search">
+          <input
+            type="text"
+            className="searchTerm"
+            placeholder="Search for recipes"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="searchButton">
             <i
-              className="fa-solid fa-magnifying-glass fa-spin"
+              className="fa-solid fa-magnifying-glass"
               style={{ color: "#8bab6a" }}
             ></i>{" "}
-            {/* Add a search icon here */}
           </button>
-      </div>
+        </div>
       </div>
       {/* <SearchRecipe /> */}
       <div className="recipes-wrapper">
@@ -230,13 +228,19 @@ export default function AllRecipes() {
               <a href={recipe.url} target="_blank" rel="noopener noreferrer">
                 {" "}
                 <Meta title={recipe.label} description={recipe.mealType} />{" "}
-                <Meta  description={recipe.cuisineType} />{" "}
+                <Meta description={recipe.cuisineType} />{" "}
                 <div className="info-row">
-        <i className="fa-brands fa-nutritionix" style={{ color: "#feda75" }}></i>
-        <Meta description={Math.round(recipe.calories)} />
-        <i className="fa-regular fa-clock" style={{ color: "#feda75" }}></i>
-        <Meta description={`${recipe.totalTime} Minutes`} />
-      </div>
+                  <i
+                    className="fa-brands fa-nutritionix"
+                    style={{ color: "#feda75" }}
+                  ></i>
+                  <Meta description={Math.round(recipe.calories)} />
+                  <i
+                    className="fa-regular fa-clock"
+                    style={{ color: "#feda75" }}
+                  ></i>
+                  <Meta description={`${recipe.totalTime} Minutes`} />
+                </div>
               </a>
             </Card>
             <button
@@ -246,28 +250,35 @@ export default function AllRecipes() {
               Add to planner
             </button>
 
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="modal-content">
-              <h2>Choose a day to save the meal</h2><br/>
-
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              className="modal-content"
+            >
+              <h2>Choose a day to save the meal</h2>
+              <br />
               <Calendar
-              className="react-calendar"
+                className="react-calendar"
                 onChange={setSelectedDate}
                 value={selectedDate.setHours(0, 0, 0, 0)}
-              /><br/>
-              <p>Selected Date: {selectedDate.toDateString()}</p><br/>
-              <h3>Selected recipe: {currentRecipe?.recipe.label}</h3><br/>
-
+              />
+              <br />
+              <p>Selected Date: {selectedDate.toDateString()}</p>
+              <br />
+              <h3>Selected recipe: {currentRecipe?.recipe.label}</h3>
+              <br />
               <Select
                 defaultValue={selectedOption}
                 onChange={setSelectedOption}
                 options={options}
               />
-
-              <button onClick={handleAddToPlanner}  className="btn-add-planner">
+              <button onClick={handleAddToPlanner} className="btn-add-planner">
                 Add to weekly planner
-              </button>&nbsp;&nbsp;
-
-              <button onClick={closeModal}  className="btn-close">Close</button>
+              </button>
+              &nbsp;&nbsp;
+              <button onClick={closeModal} className="btn-close">
+                Close
+              </button>
             </Modal>
           </div>
         ))}

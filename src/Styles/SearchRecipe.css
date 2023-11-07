@@ -1,4 +1,18 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+:root {
+  --primary: #f19a33;
+  --secondary: #8bab6a;
+  --orange: #fad68a;
+  --light-orange: #f4ebce;
+  --light: #eee;
+  --light-grey: #dde2e6;
+  --grey: #888;
+  --dark: #313154;
+  --danger: #ff5b57;
+
+  --shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
 div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
@@ -20,7 +34,7 @@ div.desc {
   text-align: center;
 }
 .card-btn {
-  background-color: #8bab6a;
+  background-color: var(--secondary);
   margin-left: auto;
 }
 .card-btn:hover {
@@ -28,19 +42,10 @@ div.desc {
   color: white;
 }
 
-/* search bar*/
-
-/* body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-} */
-
 .search {
   width: 100%;
-  position: relative;
   display: flex;
 }
-
 .searchTerm {
   width: 100%;
   border: 3px solid #f0f2f5;
@@ -48,8 +53,9 @@ div.desc {
   height: 36px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9dbfaf;
+  color: var(--dark);
   margin: 0;
+  font-family: "Barlow", sans-serif;
 }
 
 .searchTerm:focus {
@@ -60,19 +66,15 @@ div.desc {
   width: 40px;
   height: 36px;
   border: none;
-  background: #f0f2f5;
   text-align: center;
-  color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  color: var(--secondary);
 }
 
 /*Resize the wrap to see the search bar change!*/
 .wrap {
   width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 5% auto;
 }

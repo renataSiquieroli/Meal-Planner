@@ -4,24 +4,33 @@
 /* --a custom property */
 :root {
   --primary: #f19a33;
-  --secondary: #8BAB6A;
-  --orange: #FAD68A;
-  --light-orange:#f4ebce;
+  --secondary: #8bab6a;
+  --orange: #fad68a;
+  --light-orange: #f4ebce;
   --light: #eee;
-  --light-grey:#dde2e6;
+  --light-grey: #dde2e6;
   --grey: #888;
   --dark: #313154;
   --danger: #ff5b57;
 
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow: 0 1px 1px var(--orange);
 }
 
+.meal-planner h1 {
+  text-align: center;
+  font-size: 2.3em;
+  color: black;
+  text-shadow: 1px 1px var(--light-grey);
+  margin-top: 5%;
 
+  font-family: "Homemade Apple", cursive;
+  letter-spacing: 0.1em;
+}
 .planner-wrapper {
-  background-color: var(--light-grey);
   width: 80%;
   margin: 10%;
   height: 600px;
+  font-family: "Barlow", sans-serif;
 }
 
 .planner-header {
@@ -33,16 +42,16 @@
   background-color: var(--secondary);
   color: var(--light);
   height: 10%;
+  text-shadow: 0 1px 1px var(--orange);
 }
-
 
 .planner-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 500px;
-  
+  height: auto;
+  background-color: var(--light-grey);
 }
 
 .planner-container h2 {
@@ -50,20 +59,30 @@
 }
 
 .planner-card {
- border: 2px solid var(--light);
- padding:8%;
+  border: 2px solid var(--light);
+  padding: 10% 5%;
 }
 
 .planner-card h4 {
-  padding-top: 15%;
+  text-decoration: underline;
+  color: black;
+  text-shadow: 1px 1px var(--light-grey);
+  font-size: 1.2em;
 }
 
 .format-date {
-  display: flex;
-  padding: 5%;
-  text-align: center;
+  padding-bottom: 15%;
+  color: var(--light);
+  text-shadow: 1px 1px 2px var(--dark);
+  font-size: 1.2em;
 }
 
-div .meals h4{
-  color: var(--orange);
+.meals a p {
+  color: var(--dark);
+  padding: 10% 0;
+  font-weight: bold;
+}
+
+.meals a p:hover {
+  color: var(--primary);
 }
