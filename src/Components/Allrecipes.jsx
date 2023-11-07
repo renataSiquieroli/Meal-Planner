@@ -6,12 +6,12 @@ import "react-calendar/dist/Calendar.css";
 import { Card } from "antd";
 const { Meta } = Card;
 import "../Styles/AllRecipes.css";
-import SearchRecipe from "./SearchRecipe";
+
 Modal.setAppElement("#root"); // Set the root element for accessibility
 import { AuthContext } from "../context/authContext";
 import Select from "react-select";
 import Swal from "sweetalert2";
-import GroceryList from "./GroceryList";
+
 import { useIngredientsContext } from "../context/ingredientsContext";
 import "../Styles/SearchRecipe.css";
 
@@ -196,7 +196,7 @@ export default function AllRecipes() {
 
   return (
     <div className="recipes-container">
-      <h1>Pick your favourite meal and add to planner!!!</h1>
+      <h1>Pick your favorite meal and add it to planner!</h1>
       <div className="wrap">
         <div className="search">
           <input
@@ -208,10 +208,9 @@ export default function AllRecipes() {
           />
           <button className="searchButton">
             <i
-              className="fa-solid fa-magnifying-glass fa-spin"
+              className="fa-solid fa-magnifying-glass"
               style={{ color: "#8bab6a" }}
             ></i>{" "}
-            {/* Add a search icon here */}
           </button>
         </div>
       </div>

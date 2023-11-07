@@ -109,88 +109,93 @@ export default function PlannerPage() {
   console.log("DISPLAY DATE", displayDates);
 
   return (
-    <div className="planner-wrapper">
-      <div className="planner-header">
-        <h4 className="week-days">Monday</h4>
-        <h4 className="week-days">Tuesday</h4>
-        <h4 className="week-days">Wednesday</h4>
-        <h4 className="week-days">Thursday</h4>
-        <h4 className="week-days">Friday</h4>
-        <h4 className="week-days">Saturday</h4>
-        <h4 className="week-days">Sunday</h4>
-      </div>
-      <div className="planner-container">
-        {displayDates.map((displayDate) => {
-          // Check if there is a corresponding date in sortedDates
-          const matchingDate = sortedDates.find((date) => date === displayDate);
+    <div className="meal-planner">
+      <h1>Meal planner!</h1>
+      <div className="planner-wrapper">
+        <div className="planner-header">
+          <h4 className="week-days">Monday</h4>
+          <h4 className="week-days">Tuesday</h4>
+          <h4 className="week-days">Wednesday</h4>
+          <h4 className="week-days">Thursday</h4>
+          <h4 className="week-days">Friday</h4>
+          <h4 className="week-days">Saturday</h4>
+          <h4 className="week-days">Sunday</h4>
+        </div>
+        <div className="planner-container">
+          {displayDates.map((displayDate) => {
+            // Check if there is a corresponding date in sortedDates
+            const matchingDate = sortedDates.find(
+              (date) => date === displayDate
+            );
 
-          return (
-            <div className="planner-card" key={displayDate}>
-              {matchingDate ? (
-                <div key={displayDate}>
-                  <div className="format-date">
-                    <h3>{formatDate(displayDate)}</h3>
+            return (
+              <div className="planner-card" key={displayDate}>
+                {matchingDate ? (
+                  <div key={displayDate}>
+                    <div className="format-date">
+                      <h3>{formatDate(displayDate)}</h3>
+                    </div>
+                    <div className="meals">
+                      <h4>Breakfast:</h4>
+                      {groupedPlans[displayDate]?.breakfast && (
+                        <a
+                          href={groupedPlans[displayDate].breakfast.link}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <p>
+                            {groupedPlans[displayDate].breakfast
+                              ? groupedPlans[displayDate].breakfast.name
+                              : ""}
+                          </p>
+                        </a>
+                      )}
+                      <h4>Lunch: </h4>
+                      {groupedPlans[displayDate]?.lunch && (
+                        <a
+                          href={groupedPlans[displayDate].lunch.link}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <p>
+                            {groupedPlans[displayDate].lunch
+                              ? groupedPlans[displayDate].lunch.name
+                              : ""}
+                          </p>
+                        </a>
+                      )}
+                      <h4>Dinner: </h4>
+                      {groupedPlans[displayDate]?.dinner && (
+                        <a
+                          href={groupedPlans[displayDate].dinner.link}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <p>
+                            {groupedPlans[displayDate].dinner
+                              ? groupedPlans[displayDate].dinner.name
+                              : ""}
+                          </p>
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <div className="meals">
-                    <h4>Breakfast:</h4>
-                    {groupedPlans[displayDate]?.breakfast && (
-                      <a
-                        href={groupedPlans[displayDate].breakfast.link}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <p>
-                          {groupedPlans[displayDate].breakfast
-                            ? groupedPlans[displayDate].breakfast.name
-                            : ""}
-                        </p>
-                      </a>
-                    )}
-                    <h4>Lunch: </h4>
-                    {groupedPlans[displayDate]?.lunch && (
-                      <a
-                        href={groupedPlans[displayDate].lunch.link}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <p>
-                          {groupedPlans[displayDate].lunch
-                            ? groupedPlans[displayDate].lunch.name
-                            : ""}
-                        </p>
-                      </a>
-                    )}
-                    <h4>Dinner: </h4>
-                    {groupedPlans[displayDate]?.dinner && (
-                      <a
-                        href={groupedPlans[displayDate].dinner.link}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <p>
-                          {groupedPlans[displayDate].dinner
-                            ? groupedPlans[displayDate].dinner.name
-                            : ""}
-                        </p>
-                      </a>
-                    )}
+                ) : (
+                  <div key={displayDate}>
+                    <div className="format-date">
+                      <h3>{formatDate(displayDate)}</h3>
+                    </div>
+                    <div className="meals">
+                      <p>Breakfast: </p>
+                      <p>Lunch: </p>
+                      <p>Dinner: </p>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div key={displayDate}>
-                  <div className="format-date">
-                    <h3>{formatDate(displayDate)}</h3>
-                  </div>
-                  <div className="meals">
-                    <p>Breakfast: </p>
-                    <p>Lunch: </p>
-                    <p>Dinner: </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
