@@ -195,7 +195,10 @@ export default function PlannerPage() {
               </div>
             );
           })}
-        </div>
+        </div>{" "}
+        <button onClick={() => window.print()} className="btn-print">
+          Print my meal Plan
+        </button>
       </div>
     </div>
   );
