@@ -27,7 +27,7 @@ const RecipePage = () => {
     }
     Swal.fire({
       icon: "success",
-      title: "Your recipe is successfully added favorites!!!",
+      title: "Your recipe is successfully added to favorites!!!",
       showConfirmButton: false,
       timer: 4000, // Automatically close the alert after 2 seconds
     });

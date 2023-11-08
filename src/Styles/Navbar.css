@@ -32,7 +32,8 @@ body {
 }
 
 .nav-title img {
-  width: 90%;
+  width: 140px;
+  height: auto;
 }
 .nav > .nav-header > .nav-title {
   display: inline-block;
@@ -81,6 +82,8 @@ body {
   font-size: 0.9em;
 }
 
+/* query */
+/* 
 @media (max-width: 600px) {
   .nav > .nav-btn {
     display: inline-block;
@@ -125,5 +128,5 @@ body {
   .nav > #nav-check:checked ~ .nav-links {
     height: calc(100vh - 50px);
     overflow-y: auto;
-  }
-}
+  } 
+}*/

@@ -28,7 +28,7 @@
 .planner-wrapper {
   width: 80%;
   margin: 10% 10% 0;
-  height: 600px;
+  height: auto;
   font-family: "Barlow", sans-serif;
 }
 
@@ -37,10 +37,10 @@
   grid-template-columns: repeat(7, 1fr);
   justify-items: center;
   align-content: space-around;
-  font-size: 1.5em;
+  font-size: 2em;
   background-color: var(--secondary);
   color: var(--light);
-  height: 10%;
+  padding: 1%;
   text-shadow: 0 1px 1px var(--orange);
 }
 
@@ -89,7 +89,7 @@
 
 .btn-print {
   background-color: var(--primary);
-  margin-top: 3%;
+  margin: 3% 0 10%;
   border: 0;
   color: var(--light);
   padding: 8px 15px;
