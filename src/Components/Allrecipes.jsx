@@ -259,38 +259,40 @@ export default function AllRecipes() {
             >
               Add to planner
             </button>
-            
 
             <button
               className="btn-close"
               onClick={() => toggleIngredientVisibility(recipe)}
             >
-               Ingredients
+              Ingredients
             </button>
-              <Modal
-        isOpen={showIngredientsModal}
-        onRequestClose={() => {
-          setShowIngredientsModal(false);
-          setSelectedRecipe(null);
-          closeModal(); // Close the main modal if needed
-        }}
-        className="modal-content"
-      > 
-        {selectedRecipe && (
-          <div>
-            <h2>Ingredients for {selectedRecipe.label}</h2>
-            <br/>
-            <ul>
-              {selectedRecipe.ingredientLines.map((ingredient, i) => (
-                <li key={i}>{ingredient}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-         <button className="btn-close" onClick={() => setShowIngredientsModal(false)}>
-      Close
-    </button>
-      </Modal>
+            <Modal
+              isOpen={showIngredientsModal}
+              onRequestClose={() => {
+                setShowIngredientsModal(false);
+                setSelectedRecipe(null);
+                closeModal(); // Close the main modal if needed
+              }}
+              className="modal-content"
+            >
+              {selectedRecipe && (
+                <div>
+                  <h2>Ingredients for {selectedRecipe.label}</h2>
+                  <br />
+                  <ul>
+                    {selectedRecipe.ingredientLines.map((ingredient, i) => (
+                      <li key={i}>{ingredient}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <button
+                className="btn-close"
+                onClick={() => setShowIngredientsModal(false)}
+              >
+                Close
+              </button>
+            </Modal>
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
