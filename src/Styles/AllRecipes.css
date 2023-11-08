@@ -45,6 +45,7 @@
 }
 
 .btn-add-planner {
+  border: 2px solid rebeccapurple;
   background-color: #8bab6a;
   margin-top: 3%;
   border: 0;
@@ -60,6 +61,7 @@
   background-color: #f19a33;
 }
 
+/* PAGINATION */
 .btn-pagination {
   background-color: #f19a33;
   border: 0;
@@ -81,8 +83,15 @@
 }
 
 /* Favorite page */
-.favorite-title {
-  border: px solid red;
+
+.favorite-search-wrap {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 70%;
+  justify-content: center;
+  gap: 5%;
+  height: 200vh;
 }
 
 .favorite-icon {

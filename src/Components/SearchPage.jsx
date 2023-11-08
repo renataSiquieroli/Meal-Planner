@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "../Styles/SearchRecipe.css";
 import { useRecipeContext } from "../context/RecipeContext";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +21,7 @@ function SearchPage() {
             value={query}
             className="searchTerm"
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search and add to favourites!!"
+            placeholder="Search and add to favorites!!"
           />
           <button className="searchButton" onClick={handleSearch}>
             <i className="fa-solid fa-magnifying-glass"></i>{" "}

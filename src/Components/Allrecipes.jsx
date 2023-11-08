@@ -214,7 +214,7 @@ export default function AllRecipes() {
           </button>
         </div>
       </div>
-      {/* <SearchRecipe /> */}
+
       <div className="recipes-wrapper">
         {recipes.map((recipe, index) => (
           <div className="recipe-card" key={index}>
