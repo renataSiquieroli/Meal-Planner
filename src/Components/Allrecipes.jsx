@@ -264,7 +264,7 @@ export default function AllRecipes() {
               className="btn-close"
               onClick={() => toggleIngredientVisibility(recipe)}
             >
-              Ingredients
+              View Ingredients
             </button>
             <Modal
               isOpen={showIngredientsModal}
