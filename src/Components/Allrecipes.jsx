@@ -31,7 +31,6 @@ export default function AllRecipes() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIngredientsModal, setShowIngredientsModal] = useState(false); // New state to manage ingredient visibility
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-  //const [showIngredientsModal, setShowIngredientsModal] = useState(false);
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 12; // Number of recipes per page
@@ -85,16 +84,11 @@ export default function AllRecipes() {
     fetchRecipes();
     setIngredientsList([]);
   }, [currentPage, searchQuery]);
-  // const toggleIngredientVisibility = (recipeIndex) => {
-  //   setShowIngredients((prevShowIngredients) => ({
-  //     ...prevShowIngredients,
-  //     [recipeIndex]: !prevShowIngredients[recipeIndex],
-  //   }));
-  // };
   const toggleIngredientVisibility = (recipe) => {
     setSelectedRecipe(recipe);
     setShowIngredientsModal(true);
   };
+
   const mealPlannerData = {
     user: Id,
     weeks: [
@@ -183,7 +177,7 @@ export default function AllRecipes() {
         // Show the success alert using SweetAlert2
         Swal.fire({
           icon: "success",
-          title: "Your meal is successfully added to meal plan!!!",
+          title: "Your meal recipe is successfully added to meal plan!!!",
           showConfirmButton: false,
           timer: 4000, // Automatically close the alert after 2 seconds
         });
@@ -224,7 +218,7 @@ export default function AllRecipes() {
           </button>
         </div>
       </div>
-
+      {/* <SearchRecipe /> */}
       <div className="recipes-wrapper">
         {recipes.map((recipe, index) => (
           <div className="recipe-card" key={index}>

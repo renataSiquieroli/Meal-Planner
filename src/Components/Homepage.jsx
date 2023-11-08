@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Hero from "./Hero";
 import Spinner from "./Spinner";
 import BannerImg from "./BannerImg";
-import SearchPage from "./SearchPage";
 
 function Homepage() {
   const [isloading, setIsLoading] = useState(false);
