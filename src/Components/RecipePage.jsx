@@ -27,7 +27,7 @@ const RecipePage = () => {
     }
     Swal.fire({
       icon: "success",
-      title: "Your recipe is successfully added favourites!!!",
+      title: "Your recipe is successfully added favorites!!!",
       showConfirmButton: false,
       timer: 4000, // Automatically close the alert after 2 seconds
     });
@@ -62,9 +62,9 @@ const RecipePage = () => {
   return (
     <>
       <div className="recipes-container">
-        <h3>Search Results for {query}</h3>
+        <h1>Search Results for: {query}</h1>
 
-        <div className="recipes-wrapper">
+        <div className="favorite-search-wrap">
           {recipes.map((recipe, index) => (
             <div className="recipe-card" key={index}>
               <Card
@@ -106,11 +106,11 @@ const RecipePage = () => {
                   </button>
                 </div>
               </Card>
-              <button className="btn-add-planner">
+              {/* <button className="btn-view-recipe">
                 <a href={recipe.url} target="_blank" rel="noopener noreferrer">
                   <h4>View Recipe</h4>
                 </a>
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
