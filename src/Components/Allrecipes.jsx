@@ -30,7 +30,8 @@ export default function AllRecipes() {
   const { ingredientsList, setIngredientsList } = useIngredientsContext(); // Ingredients list
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIngredientsModal, setShowIngredientsModal] = useState(false); // New state to manage ingredient visibility
-
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  //const [showIngredientsModal, setShowIngredientsModal] = useState(false);
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 12; // Number of recipes per page
@@ -84,7 +85,16 @@ export default function AllRecipes() {
     fetchRecipes();
     setIngredientsList([]);
   }, [currentPage, searchQuery]);
-
+  // const toggleIngredientVisibility = (recipeIndex) => {
+  //   setShowIngredients((prevShowIngredients) => ({
+  //     ...prevShowIngredients,
+  //     [recipeIndex]: !prevShowIngredients[recipeIndex],
+  //   }));
+  // };
+  const toggleIngredientVisibility = (recipe) => {
+    setSelectedRecipe(recipe);
+    setShowIngredientsModal(true);
+  };
   const mealPlannerData = {
     user: Id,
     weeks: [
@@ -249,7 +259,38 @@ export default function AllRecipes() {
             >
               Add to planner
             </button>
+            
 
+            <button
+              className="btn-close"
+              onClick={() => toggleIngredientVisibility(recipe)}
+            >
+               Ingredients
+            </button>
+              <Modal
+        isOpen={showIngredientsModal}
+        onRequestClose={() => {
+          setShowIngredientsModal(false);
+          setSelectedRecipe(null);
+          closeModal(); // Close the main modal if needed
+        }}
+        className="modal-content"
+      > 
+        {selectedRecipe && (
+          <div>
+            <h2>Ingredients for {selectedRecipe.label}</h2>
+            <br/>
+            <ul>
+              {selectedRecipe.ingredientLines.map((ingredient, i) => (
+                <li key={i}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+         <button className="btn-close" onClick={() => setShowIngredientsModal(false)}>
+      Close
+    </button>
+      </Modal>
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
