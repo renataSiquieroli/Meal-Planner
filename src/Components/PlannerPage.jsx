@@ -111,6 +111,7 @@ export default function PlannerPage() {
   return (
     <div className="meal-planner">
       <h1>Meal planner!</h1>
+      <img src="/fruit-logo-orange.png" alt="Logo" />
       <div className="planner-wrapper">
         <div className="planner-header">
           <h4 className="week-days">Monday</h4>
