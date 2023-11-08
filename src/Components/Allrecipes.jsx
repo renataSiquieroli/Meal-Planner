@@ -173,7 +173,7 @@ export default function AllRecipes() {
         // Show the success alert using SweetAlert2
         Swal.fire({
           icon: "success",
-          title: "Your meal is successfully added to meal plan!!!",
+          title: "Your meal recipe is successfully added to meal plan!!!",
           showConfirmButton: false,
           timer: 4000, // Automatically close the alert after 2 seconds
         });
@@ -214,7 +214,7 @@ export default function AllRecipes() {
           </button>
         </div>
       </div>
-
+      {/* <SearchRecipe /> */}
       <div className="recipes-wrapper">
         {recipes.map((recipe, index) => (
           <div className="recipe-card" key={index}>
