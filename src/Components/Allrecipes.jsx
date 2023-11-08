@@ -30,7 +30,7 @@ export default function AllRecipes() {
   const { ingredientsList, setIngredientsList } = useIngredientsContext(); // Ingredients list
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIngredientsModal, setShowIngredientsModal] = useState(false); // New state to manage ingredient visibility
-
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 12; // Number of recipes per page
@@ -84,6 +84,10 @@ export default function AllRecipes() {
     fetchRecipes();
     setIngredientsList([]);
   }, [currentPage, searchQuery]);
+  const toggleIngredientVisibility = (recipe) => {
+    setSelectedRecipe(recipe);
+    setShowIngredientsModal(true);
+  };
 
   const mealPlannerData = {
     user: Id,
