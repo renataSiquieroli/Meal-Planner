@@ -25,9 +25,15 @@
   font-family: "Homemade Apple", cursive;
   letter-spacing: 0.1em;
 }
+
+.meal-planner img {
+  margin: 0 45% 0;
+  width: 5%;
+}
+
 .planner-wrapper {
   width: 80%;
-  margin: 10% 10% 0;
+  margin: 5% 10% 0;
   height: auto;
   font-family: "Barlow", sans-serif;
 }
